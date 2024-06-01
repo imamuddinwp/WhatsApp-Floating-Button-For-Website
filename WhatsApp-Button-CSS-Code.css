@@ -1,0 +1,39 @@
+.nav-whatsapp{position:fixed;bottom:120px;right:20px;z-index:1000;padding:12px 0}
+.nav-whatsapp.active .wrapperWA{opacity:1;visibility:visible;width:400px;height:auto;z-index:6;display:block}
+.nav-whatsapp.active .whatsapp-float{opacity:0;visibility:hidden}
+.wrapperWA{position:fixed;right:20px;bottom:20px;width:60px;padding:25px;border-radius:5px;box-shadow:rgba(0,0,0,0.1) 0 4px 12px;z-index:-1;opacity:0;visibility:hidden;transition:opacity .3s ease;height:60px;margin:12px 0;background:#fff;display:none}
+.wrapperWA-header{display:flex;align-items:center;margin-bottom:20px;justify-content:center;position:relative}
+.wrapperWA-header h2{text-align:center;text-transform:uppercase;letter-spacing:3px;color:#332902;font-size:1rem;flex:1 1 auto;margin:0}
+.wrapperWA-header .closeWA svg{width:20px;height:20px;float:right;cursor: pointer}
+.form-container .formC:nth-child(1){display:grid;grid-template-columns:repeat(auto-fit,minmax(45%,1fr));gap:1rem;--gap:1rem}
+.form-container .formC:nth-child(2){display:grid;grid-template-columns:repeat(auto-fit,minmax(100%,1fr))}
+.form-container .formC .Fcontrol{position:relative}
+.form-container .formC .Fcontrol input:focus,.form-container .formC .Fcontrol textarea:focus{border-color:#4caf50}
+.Fcontrol input[type="text"],.Fcontrol input[type="email"],.Fcontrol .cSubject,.Fcontrol textarea{width:100%;height:calc(3.5rem + calc(1px * 2));padding:.375rem 2.25rem .375rem .75rem;padding-top:1.625rem;border-radius:5px;margin-bottom:15px;border:1px solid rgba(0,0,0,0.05);background:#fff}
+.Fcontrol textarea{height:100px}
+.Fcontrol input:focus ~ .nameC,.Fcontrol input:focus ~ .emailC,.Fcontrol textarea:focus ~ .messageC{top:-5px}
+.Fcontrol input[type="text"],.Fcontrol input[type="email"],.Fcontrol textarea{padding:.75rem;padding-top:1.625rem;}
+.Fcontrol .nameC,.Fcontrol .emailC,.Fcontrol .subjectC,.Fcontrol .messageC{position:absolute;top:0;left:0;z-index:2;height:auto;padding:1rem .75rem;transform:scale(0.85) translateY(-0.5rem) translateX(0.15rem);transform-origin:0 0;overflow:hidden;text-overflow:ellipsis;pointer-events:none;white-space:nowrap;color:rgba(33,37,41,0.65);transition:0.1s ease}
+.formC .Fcontrol .cSubject{display:block;background:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") no-repeat right .75rem center/16px 12px;border:1px solid rgba(0,0,0,0.08);-webkit-appearance:none;-moz-appearance:none;appearance:none}
+.valid[data-text]:before{position:absolute;bottom:100%;left:12px;content:"";border:8px solid;border-color:transparent transparent #ffd91a transparent;top:calc(100% - 21px)}
+.valid[data-text]:after,.valid[data-text]:before{opacity:1;transition:opacity 0.2s ease;pointer-events:none;z-index:3}
+.valid[data-text]:after{content:attr(data-text);position:absolute;background:#ffd91a;left:0;top:calc(100% - 5px);font-size:12px;padding:5px;box-shadow:0 5px 10px rgb(0 0 0 / 8%);border-radius:5px}
+.show#cName ~ .valid:after,.show#cEmail ~ .valid:after,.show#cMessage ~ .valid:after,.show#cName ~ .valid[data-text]:before,.show#cEmail ~ .valid[data-text]:before,.show#cMessage ~ .valid[data-text]:before{opacity:0}
+.none#cName ~ .valid:after,.none#cEmail ~ .valid:after,.none#cMessage ~ .valid:after,.none#cName ~ .valid[data-text]:before,.none#cEmail ~ .valid[data-text]:before,.none#cMessage ~ .valid[data-text]:before{opacity:1}
+.whatsapp-send{display:inline-flex;align-items:center;gap:0.3rem;padding:10px 20px;background-color:#4caf50;color:#fff;text-decoration:none;font-weight:bold;font-size:12px;border-radius:4px;transition:background-color 0.3s;cursor:default;height:auto;width:auto; cursor:pointer}
+.whatsapp-send svg{fill:#fff;width:22px;height:22px}
+.whatsapp-send:hover{background-color:#45a049}
+.whatsapp-float{display:flex;align-items:center;flex-direction:column;gap:.2rem}
+.whatsapp-float .whatsapp-icon{width:60px;height:60px;border-radius:50%;background-color:#4CAF50;display:flex;justify-content:center;align-items:center;animation-name:waAnimation;animation-duration:1.5s;animation-timing-function:ease-out;animation-iteration-count:infinite}
+@keyframes waAnimation{0%{box-shadow:0 0 0 0 rgba(74,175,80,0.5)}80%{box-shadow:0 0 0 14px rgba(74,175,80,0)}}
+.whatsapp-float .whatsapp-icon svg{fill:#fff;width:30px;height:30px}
+select:focus{outline:none}
+select::-ms-expand{display:none}
+@media screen and (max-width:620px){
+	.formC:nth-child(1){gap:0}
+	.nav-whatsapp.active .wrapperWA{width:auto;height:auto;right:0;left:0;bottom:0;top:auto;margin:0;transition:all .3s ease}
+	.form-container .formC:nth-child(1){grid-template-columns:auto;gap:0}
+}
+.drK .wrapperWA{background:#202426}
+.drK .Fcontrol input[type="text"],.drK .Fcontrol input[type="email"],.drK .Fcontrol .cSubject,.drK .Fcontrol textarea{background:#272b2d}
+.drK .wrapperWA-header h2,.drK .Fcontrol .nameC,.drK .Fcontrol .emailC,.drK .Fcontrol .subjectC,.drK .Fcontrol .messageC{color:#fff}
